@@ -1,0 +1,58 @@
+<idea-plugin version="2">
+    <id>org.buffagon.intellij.marionette.coffee</id>
+    <name>Marionette Coffee</name>
+    <version>0.1</version>
+    <vendor email="prokofiev.ad@yandex.ru" url="http://vk.com/buffagon">Prokofiev Alex</vendor>
+
+    <description><![CDATA[
+      Set of actions help for code generation.
+      <ul>
+      <li> Create base marionette module.</li>
+      <li> Create item views.</li>
+      <li> Create composite views.</li>
+      </ul>
+    ]]></description>
+
+    <change-notes><![CDATA[
+
+    ]]>
+    </change-notes>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="139.0"/>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <depends>com.intellij.modules.xml</depends>
+    <depends>com.intellij.modules.json</depends>
+    <depends>JavaScript</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <group id="org.buffagon.intellij.marionette.coffee.ActionGroup" text="Marionette"
+               icon="/icons/logo_16.png" popup="true">
+            <action id="org.buffagon.intellij.marionette.coffee.actions.CreateModuleAction"
+                    class="org.buffagon.intellij.marionette.coffee.actions.CreateModuleAction"
+                    text="Module" icon="/icons/module_16.png">
+            </action>
+            <action id="org.buffagon.intellij.marionette.coffee.actions.CreateItemViewAction"
+                    class="org.buffagon.intellij.marionette.coffee.actions.CreateItemViewAction"
+                    text="ItemView" icon="/icons/item_16.png">
+            </action>
+            <action id="org.buffagon.intellij.marionette.coffee.actions.CreateCompositeViewAction"
+                    class="org.buffagon.intellij.marionette.coffee.actions.CreateCompositeViewAction"
+                    text="Composite View" icon="/icons/composite_16.png">
+            </action>
+            <add-to-group group-id="NewGroup" anchor="after" relative-to-action="NewDir"/>
+        </group>
+
+    </actions>
+
+</idea-plugin>
